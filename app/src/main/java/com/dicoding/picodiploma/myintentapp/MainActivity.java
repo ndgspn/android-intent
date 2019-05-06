@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.btn_dial_phone:
-                String phoneNumber = "085777222926";
+                String phoneNumber = "08512345678";
                 Intent dialPhoneIntent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + phoneNumber));
                 startActivity(dialPhoneIntent);
                 break;
