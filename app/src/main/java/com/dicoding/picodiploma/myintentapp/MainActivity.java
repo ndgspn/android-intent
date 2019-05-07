@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
     Button btnMoveActivity;
     Button btnMoveActivityWithData;
     Button btnMoveActivityWithObject;
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnMoveForResult.setOnClickListener(this);
 
         tvResult = findViewById(R.id.tv_result);
+
     }
 
     @Override
@@ -75,14 +77,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.btn_move_for_result:
-                Intent moveForResultIntent = new Intent(MainActivity.this, MoveForResultActivity.class);
-                startActivityForResult(moveForResultIntent, REQUEST_CODE);
+                Intent resultIntent = new Intent(MainActivity.this, MoveForResultActivity.class);
+                startActivityForResult(resultIntent, REQUEST_CODE);
                 break;
         }
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == REQUEST_CODE) {
@@ -92,4 +94,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
     }
+
 }

@@ -8,11 +8,12 @@ import android.widget.Button;
 import android.widget.RadioGroup;
 
 public class MoveForResultActivity extends AppCompatActivity implements View.OnClickListener {
+
     Button btnChoose;
     RadioGroup rgNumber;
 
     public static String EXTRA_SELECTED_VALUE = "extra_selected_value";
-    public static int RESULT_CODE = 100;
+    public static int RESULT_CODE = 110;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +24,7 @@ public class MoveForResultActivity extends AppCompatActivity implements View.OnC
         rgNumber = findViewById(R.id.rg_number);
 
         btnChoose.setOnClickListener(this);
+
     }
 
     @Override
@@ -30,6 +32,7 @@ public class MoveForResultActivity extends AppCompatActivity implements View.OnC
         if (v.getId() == R.id.btn_choose) {
             if (rgNumber.getCheckedRadioButtonId() != 0) {
                 int value = 0;
+
                 switch (rgNumber.getCheckedRadioButtonId()) {
                     case R.id.rb_50:
                         value = 50;
@@ -52,4 +55,5 @@ public class MoveForResultActivity extends AppCompatActivity implements View.OnC
             }
         }
     }
+    
 }
