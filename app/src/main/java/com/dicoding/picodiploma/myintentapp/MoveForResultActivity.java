@@ -55,5 +55,5 @@ public class MoveForResultActivity extends AppCompatActivity implements View.OnC
             }
         }
     }
-    
+
 }
